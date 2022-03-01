@@ -1,7 +1,7 @@
 # Github Actions Status
 
 <p align="center">
-  <p>Build: <img src="https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push" alt="Github Actions status"></p>
+  <a href="https://github.com/tinalearncode/cicd-demo"><img src="https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push" alt="Github Actions status"></a>
 </p>
 
 # Getting Started with Create React App
