@@ -1,4 +1,4 @@
-# Github Actions Status
+<h2 align="center">Github Actions Status</h2>
 
 <p align="center">
   <a href="https://github.com/tinalearncode/cicd-demo"><img src="https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push" alt="Github Actions status"></a>
