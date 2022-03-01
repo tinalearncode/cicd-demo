@@ -1,4 +1,4 @@
-![example workflow](https://github.com/tinalearncode/cicd-demo/actions/workflows/Build/badge.svg)
+![Build](https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg)
 
 # Getting Started with Create React App
 
