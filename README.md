@@ -1,6 +1,6 @@
-#Github Actions Status
+# Github Actions Status
 
-<p align-"center">
+<p align="center">
   <p>Build: <img src="https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push" alt="Github Actions status"></p>
 </p>
 
