@@ -1,4 +1,4 @@
-![Build](https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push)
 
 # Getting Started with Create React App
 
