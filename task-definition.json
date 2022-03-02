@@ -1,112 +1,24 @@
 {
-  "family": "",
-  "taskRoleArn": "",
-  "executionRoleArn": "",
-  "networkMode": "bridge",
+  "family": "cicd-demo",
   "containerDefinitions": [
     {
       "name": "cicd-demo-container",
-      "image": "",
-      "repositoryCredentials": {
-        "credentialsParameter": ""
-      },
-      "cpu": 0,
-      "memory": 0,
-      "memoryReservation": 0,
-      "links": [""],
+      "image": "cicd-demo-container/cicd-demo-container:latest",
+      "entryPoint": ["sh", "-c"],
       "portMappings": [
         {
-          "containerPort": 0,
-          "hostPort": 0,
-          "protocol": "tcp"
-        }
-      ],
-      "essential": true,
-      "entryPoint": [""],
-      "command": [""],
-      "environment": [
-        {
-          "name": "",
-          "value": ""
-        }
-      ],
-      "environmentFiles": [
-        {
-          "value": "",
-          "type": "s3"
-        }
-      ],
-      "mountPoints": [
-        {
-          "sourceVolume": "",
-          "containerPath": "",
-          "readOnly": true
-        }
-      ],
-      "volumesFrom": [
-        {
-          "sourceContainer": "",
-          "readOnly": true
-        }
-      ],
-      "linuxParameters": {
-        "capabilities": {
-          "add": [""],
-          "drop": [""]
-        },
-        "devices": [
-          {
-            "hostPath": "",
-            "containerPath": "",
-            "permissions": ["read"]
-          }
-        ],
-        "initProcessEnabled": true,
-        "sharedMemorySize": 0,
-        "tmpfs": [
-          {
-            "containerPath": "",
-            "size": 0,
-            "mountOptions": [""]
-          }
-        ],
-        "maxSwap": 0,
-        "swappiness": 0
-      },
-      "secrets": [
-        {
-          "name": "",
-          "valueFrom": ""
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
         }
       ],
       "dependsOn": [
         {
-          "containerName": "",
           "condition": "COMPLETE"
         }
       ],
-      "startTimeout": 0,
-      "stopTimeout": 0,
-      "hostname": "",
-      "user": "",
-      "workingDirectory": "",
-      "disableNetworking": true,
-      "privileged": true,
-      "readonlyRootFilesystem": true,
-      "dnsServers": [""],
-      "dnsSearchDomains": [""],
-      "extraHosts": [
-        {
-          "hostname": "",
-          "ipAddress": ""
-        }
-      ],
-      "dockerSecurityOptions": [""],
-      "interactive": true,
-      "pseudoTerminal": true,
-      "dockerLabels": {
-        "KeyName": ""
-      },
+      "cpu": 10,
+      "memory": 300,
       "ulimits": [
         {
           "name": "rss",
@@ -126,13 +38,7 @@
           }
         ]
       },
-      "healthCheck": {
-        "command": [""],
-        "interval": 0,
-        "timeout": 0,
-        "retries": 0,
-        "startPeriod": 0
-      },
+
       "systemControls": [
         {
           "namespace": "",
@@ -196,7 +102,8 @@
       "expression": ""
     }
   ],
-  "requiresCompatibilities": ["FARGATE"],
+  "compatibilities": ["EC2", "EXTERNAL"],
+  "requiresCompatibilities": ["EC2"],
   "cpu": "",
   "memory": "",
   "tags": [
