@@ -23,6 +23,6 @@
     }
   ],
   "memory": "100",
-  "cup": "1 vcpu",
+  "cpu": "1 vcpu",
   "requiresCompatibilities": ["EC2"]
 }
