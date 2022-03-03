@@ -22,7 +22,7 @@
       }
     }
   ],
-  "memory": "100",
+  "memory": "700",
   "cpu": "1 vcpu",
   "requiresCompatibilities": ["EC2"]
 }
