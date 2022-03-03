@@ -1,14 +1,14 @@
 name: static code analysis
 
 on:
-  push:
+  workflow_run:
     workflows: ['Build']
     branches: ['main', 'develop']
     types:
       - completed
 
 jobs:
-  sonarcloud:
+  sonarcloud-scan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
