@@ -11,9 +11,18 @@
           "containerPort": 3000,
           "protocol": "tcp"
         }
-      ]
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/cicd-demo",
+          "awslogs-region": "ap-southeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ],
-  "memory": "500",
+  "memory": "1024",
+  "cpu": "256",
   "requiresCompatibilities": ["EC2"]
 }
