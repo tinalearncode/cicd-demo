@@ -14,6 +14,6 @@
       ]
     }
   ],
-  "memory": "1024",
+  "memory": "300",
   "requiresCompatibilities": ["EC2"]
 }
