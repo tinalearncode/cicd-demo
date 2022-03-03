@@ -1,4 +1,4 @@
-name: static code analysis
+name: Satic Code Analysis
 
 on:
   push:
