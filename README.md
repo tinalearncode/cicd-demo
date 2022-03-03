@@ -4,8 +4,8 @@
   <a href="https://github.com/tinalearncode/cicd-demo"><img src="https://github.com/tinalearncode/cicd-demo/actions/workflows/build.yml/badge.svg?event=push" alt="Github Actions status"></a>
 </p>
 
-# Getting Started with Create React App
 
+<h2 align="center">Getting Started with Create React App</h2>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
