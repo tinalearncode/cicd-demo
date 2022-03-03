@@ -2,8 +2,8 @@
   "family": "cicd-demo",
   "containerDefinitions": [
     {
-      "name": "cicd-demo-container",
-      "image": "cicd-demo-container/cicd-demo-container:latest",
+      "name": "cicd-demo",
+      "image": "823955147616.dkr.ecr.ap-southeast-2.amazonaws.com/cicd-demo:latest",
       "entryPoint": ["sh", "-c"],
       "portMappings": [
         {
