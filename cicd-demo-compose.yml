@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  react:
+    build:
+      context: ../cicd-demo/
+      dockerfile: ./Dockerfile
+    container_name: cicd-demo
+    volumes:
+      - ../cicd-demo:/usr/src/app
+    networks:
+      my-network:
+        aliases:
+          - cicd-demo
+    expose:
+      - 3000
+    ports:
+      - '8080:3000'
+    stdin_open: true

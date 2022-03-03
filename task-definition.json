@@ -4,7 +4,6 @@
     {
       "name": "cicd-demo",
       "image": "cicd-demo:latest",
-      "entryPoint": ["sh", "-c"],
       "portMappings": [
         {
           "hostPort": 8080,
