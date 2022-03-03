@@ -3,17 +3,17 @@
   "containerDefinitions": [
     {
       "name": "cicd-demo",
-      "image": "823955147616.dkr.ecr.ap-southeast-2.amazonaws.com/cicd-demo:latest",
+      "image": "cicd-demo:latest",
       "entryPoint": ["sh", "-c"],
       "portMappings": [
         {
-          "hostPort": 8080,
+          "hostPort": 80,
           "containerPort": 3000,
           "protocol": "tcp"
         }
       ]
     }
   ],
-  "memory": "300",
+  "memory": "500",
   "requiresCompatibilities": ["EC2"]
 }
