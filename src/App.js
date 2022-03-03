@@ -14,7 +14,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          cide-demo repo →
+          cicd-demo repo →
         </a>
       </header>
     </div>
