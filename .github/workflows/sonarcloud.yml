@@ -8,7 +8,7 @@ on:
       - completed
 
 jobs:
-  sonarcloud-scan:
+  sonarcloud:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
