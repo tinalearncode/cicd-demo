@@ -51,7 +51,7 @@ jobs:
           CI: true
 
   sonarCloud:
-    needs: test
+    needs: build
     name: SonarCloud Scan
     runs-on: ubuntu-latest
     steps:
