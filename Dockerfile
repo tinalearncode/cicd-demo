@@ -7,11 +7,8 @@ ENV PATH=cicd-demo/node_modules/.bin:$PATH
 # install application dependencies
 COPY package.json ./
 COPY package-lock.json ./
-RUN CI=true
 RUN npm i
 # add app
 COPY . ./
-
-EXPOSE 3000
 # start app
 CMD ["npm", "start"]
