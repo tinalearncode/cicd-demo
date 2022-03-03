@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Tina is learning👀</h1>
+        <h1>Tina is Learning👀</h1>
         <p>
           React🎨 CI/CD🔗 Docker🐬  &  more 🌱
         </p>
