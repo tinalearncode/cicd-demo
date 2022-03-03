@@ -49,3 +49,14 @@ jobs:
           npm run build --if-present
         env:
           CI: true
+
+  sonarCloud:
+    needs: test
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Static Code Analyze with sonarCloud
+        uses: sonarSource/sounarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
