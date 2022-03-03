@@ -14,6 +14,7 @@ on:
 
 env:
   AWS_REGION: ap-southeast-2 # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REGISTRY: public.ecr.aws/p1r3s0p3
   ECR_REPOSITORY: cicd-demo # set this to your Amazon ECR repository name
   ECS_SERVICE: cicd-demo # set this to your Amazon ECS service name
   ECS_CLUSTER: cicd-demo # set this to your Amazon ECS cluster name
@@ -49,7 +50,7 @@ jobs:
         id: build-image
         env:
           # ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REGISTRY: ${{secrets.AWS_ECR_REGISTRY}}
+          ECR_REGISTRY: ${{ env.ECR_REGISTRY}}
           IMAGE_TAG: ${{ github.sha }}
         run: |
           # Build a docker container and
