@@ -5,11 +5,10 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, develop]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,17 +17,17 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: npm install and test
-      run: |
-        npm ci
-        npm test
-  
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: npm install and test
+        run: |
+          npm ci
+          npm test
+
   build:
     needs: test
     runs-on: [ubuntu-latest]
@@ -38,16 +37,15 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: npm build
-      run: |
-        npm install
-        npm run build --if-present
-      env:
-        CI: true
-          
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: npm build
+        run: |
+          npm install
+          npm run build --if-present
+        env:
+          CI: true

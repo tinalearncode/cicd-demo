@@ -2,18 +2,16 @@
   "family": "cicd-demo",
   "containerDefinitions": [
     {
-      "name": "cicd-demo-container",
-      "image": "cicd-demo-container/cicd-demo-container:latest",
+      "name": "cicd-demo",
+      "image": "823955147616.dkr.ecr.ap-southeast-2.amazonaws.com/cicd-demo:latest",
       "entryPoint": ["sh", "-c"],
       "portMappings": [
         {
-          "hostPort": 80,
-          "protocol": "tcp",
-          "containerPort": 80
+          "hostPort": 8080,
+          "containerPort": 3000,
+          "protocol": "tcp"
         }
-      ],
-      "cpu": 10,
-      "memory": 300
+      ]
     }
   ],
   "compatibilities": ["EC2", "EXTERNAL"],

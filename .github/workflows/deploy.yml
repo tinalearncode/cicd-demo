@@ -6,20 +6,22 @@
 name: Deploy to Amazon ECS
 
 on:
-  push:
+  pull_request:
+    types:
+      - opened
     branches:
       - main
 
 env:
   AWS_REGION: ap-southeast-2 # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: cicd-demo # set this to your Amazon ECR repository name
-  ECS_SERVICE: cicd-demo-service # set this to your Amazon ECS service name
-  ECS_CLUSTER: cicd-demo-cluster # set this to your Amazon ECS cluster name
+  ECS_SERVICE: cicd-demo # set this to your Amazon ECS service name
+  ECS_CLUSTER: cicd-demo # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION:
     task-definition.json # set this to the path to your Amazon ECS task definition
     # file, e.g. .aws/task-definition.json
   CONTAINER_NAME:
-    cicd-demo-container # set this to the name of the container in the
+    cicd-demo # set this to the name of the container in the
     # containerDefinitions section of your task definition
 
 jobs:
@@ -68,6 +70,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
+          # service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
