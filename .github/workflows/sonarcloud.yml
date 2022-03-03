@@ -3,6 +3,7 @@ name: static code analysis
 on:
   workflow_run:
     workflows: ['Build']
+    branches: ['main', 'develop']
     type:
       - completed
 
