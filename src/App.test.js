@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/cicd-demo repo/i);
+  const linkElement = screen.getByText(/Buy Your Car/i);
   expect(linkElement).toBeInTheDocument();
 });
