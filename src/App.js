@@ -26,9 +26,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/car_insurance" element={<CarInsurance />}/>
+            <Route path="/vehicle_insurance" element={<Insurance />}/>
           </Routes>
         </main>
-        </Router>
+      </Router>
     </div>
   );
 }
@@ -49,8 +50,8 @@ function Navbar(props) {
 function NavItem(props){
   const [open, setOpen] = useState(false)
   return(
-    <li className="nav-item"  >
-      <div className="dropdown-title"  onClick={()=>setOpen(!open)}>
+    <li className="nav-item"    onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}>
+      <div className="dropdown-title">
         <p>{props.item}</p>
         <FaAngleDown/></div>
       {open && props.children}
@@ -84,18 +85,39 @@ function CarInsurance(){
     <div className='insurances'>
       <Card name="Motor Vehicle Insurance"/>
       <Card name="Mechanical Breakdown"/>
-      <Card name="Claim"/>
+      <Card name="Make a Claim"/>
     </div>
   )
 }
 
 function Card(props){
   return(
-    <div className='card'>
+    <div className='card'><Link to="/vehicle_insurance">
       <div className='card-photo'>
         <img src="car-insurance.png" alt="a car with a man stand by side"/>
       </div>
-      <div className='insurance-type'>{props.name}</div>
+      <div className='insurance-type'>{props.name}</div> </Link>
+    </div>
+  )
+}
+
+function Insurance(){
+  const [openForm, setOpenForm] = useState(false)
+  return(
+    <div className='insurance-detail'>
+      <button className='quote-button' onClick={()=>setOpenForm(true)}>Quote</button>
+      {
+        openForm && <QuoteForm setOpenForm={setOpenForm}/>
+      }
+    </div>
+  )
+}
+
+function QuoteForm({setOpenForm}){
+  return(
+    <div className="quote-window">
+      <input type="text" />
+      <button className='quote-button close' onClick={()=>setOpenForm(false)}>Close</button>
     </div>
   )
 }
