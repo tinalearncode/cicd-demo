@@ -9,6 +9,7 @@ import React, {useState} from 'react'
 import {FaAngleDown} from 'react-icons/fa'
 import {MdAccountBox} from 'react-icons/md'
 
+
 function App() {
   return (
     <div className='Contaner'>
@@ -83,20 +84,23 @@ function DropdownMenu(){
 function CarInsurance(){
   return(
     <div className='insurances'>
-      <Card name="Motor Vehicle Insurance"/>
-      <Card name="Mechanical Breakdown"/>
-      <Card name="Make a Claim"/>
+     <Link to="/vehicle_insurance"><Card name="Motor Vehicle Insurance" image="car-insurance-0.png"/></Link>
+      
+      <Card name="Mechanical Breakdown" image="car-insurance-1.png"/>
+      <Card name="Make a Claim" image="car-insurance-2.png"/>
     </div>
   )
 }
 
 function Card(props){
   return(
-    <div className='card'><Link to="/vehicle_insurance">
-      <div className='card-photo'>
-        <img src="car-insurance.png" alt="a car with a man stand by side"/>
-      </div>
-      <div className='insurance-type'>{props.name}</div> </Link>
+    <div className='card'>
+     
+        <div className='card-photo'>
+          <img src={props.image} alt="a car with a man stand by side"/>
+        </div>
+        <div className='insurance-type'>{props.name}</div> 
+     
     </div>
   )
 }

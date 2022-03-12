@@ -104,8 +104,12 @@
   box-shadow: 0 0 10px gray;
 }
 
+.card-photo {
+  height: 80%;
+}
+
 .card-photo img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .insurance-type {
